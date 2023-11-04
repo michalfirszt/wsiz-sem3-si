@@ -13,5 +13,5 @@ const getSelectedPost = async (postId) => {
     console.log(response.data)
 }
 
-getSelectedPost(5)
+getSelectedPost(10)
 // getPostsData()
