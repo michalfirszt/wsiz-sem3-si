@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="simple-list">
+    </ul>
+
+    <script>
+        const listItems = ['Item 1', 'Item 2', 'Item 3', 'Awesome item'];
+        const ulList = document.getElementById('simple-list')
+
+        listItems.forEach((item) => {
+            const li = document.createElement('li');
+            const itemContent = document.createTextNode(item);
+
+            li.appendChild(itemContent)
+            ulList.appendChild(li)
+        })
+
+        // create another list <ol> in html by using code
+    </script>
+</body>
+</html>
