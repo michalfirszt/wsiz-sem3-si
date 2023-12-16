@@ -10,18 +10,29 @@
     </ul>
 
     <script>
-        const listItems = ['Item 1', 'Item 2', 'Item 3', 'Awesome item'];
-        const ulList = document.getElementById('simple-list')
+        const getData = async (url, method, onSuccess) => {
+            const response = await fetch(url, {
+                method: method
+            })
 
-        listItems.forEach((item) => {
-            const li = document.createElement('li');
-            const itemContent = document.createTextNode(item);
+            const data = await response.json()
 
-            li.appendChild(itemContent)
-            ulList.appendChild(li)
+            if (response.status === 200) {
+                onSuccess(data)
+            }
+        }
+
+        getData('http://localhost:3000/posts', 'GET', (data) => {
+            const ulList = document.getElementById('simple-list')
+
+            data.forEach((item) => {
+                const li = document.createElement('li');
+                const itemContent = document.createTextNode(item.title);
+
+                li.appendChild(itemContent)
+                ulList.appendChild(li)
+            })
         })
-
-        // create another list <ol> in html by using code
     </script>
 </body>
 </html>
