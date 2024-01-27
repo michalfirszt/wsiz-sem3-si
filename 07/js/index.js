@@ -11,12 +11,14 @@ const getData = async (url, method, onSuccess) => {
 }
 
 const button = document.getElementById('button');
+const input = document.getElementById('text-input');
 
 button.addEventListener('click', async () => {
     const ulList = document.getElementById('list');
     const objectContent = document.getElementById('object-content');
+    const url = input.value;
 
-    await getData('http://localhost:3000/posts/1', 'GET', (data) => {
+    await getData(url, 'GET', (data) => {
         if (Array.isArray(data)) {
             data.forEach((dataItem) => {
                 const li = document.createElement('li');
