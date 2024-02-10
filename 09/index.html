@@ -6,12 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="http://localhost:3000/posts">
+    <!-- 
+        #1
+        create custom form validation
+        remove form default behavior
+        - on form submit:
+            - prevent default behavior
+            - send POST request to create new post
+            - reset form
+     -->
+    <!-- <form method="POST" action="http://localhost:3000/posts">
         <input type="text" placeholder="Title" name="title" required/>
         <input type="text" placeholder="Author" name="author" required/>
         <button type="submit">
             Create new post
         </button>
+    </form> -->
+
+    <!-- #1 -->
+    <form id="custom-form" novalidate>
+        <input id="title-input" type="text" placeholder="Title" name="title" required/>
+        <input id="author-input" type="text" placeholder="Author" name="author" required/>
+        <button type="submit">
+            Create new post
+        </button>
     </form>
+
+    <script src="./js/index.js"></script>
 </body>
 </html>
